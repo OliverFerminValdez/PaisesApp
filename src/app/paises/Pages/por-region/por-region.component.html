@@ -1,0 +1,20 @@
+<h2>Por region</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <button 
+        [class]="getClassCSS(region)"  
+        *ngFor="let region of regiones" (click)="activarRegion(region)">
+            {{region}}
+        </button>
+    </div>
+</div>
+
+<hr>
+<div class="alert alert-danger" *ngIf="hayError">
+    No se encontro nada con el termino {{termino}}
+</div>
+
+<div class="row" *ngIf="paises.length > 0">
+  <app-pais-tabla [paises]="paises"></app-pais-tabla>
+</div>
